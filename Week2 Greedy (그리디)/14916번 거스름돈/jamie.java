@@ -18,7 +18,7 @@ public class jamie {
 
       // 2원
       n -= 2;
-      count ++;
+      count++;
     }
     
     if (n == 0) {
