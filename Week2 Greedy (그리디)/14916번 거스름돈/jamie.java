@@ -21,7 +21,6 @@ public class jamie {
       count ++;
     }
     
-    
     if (n == 0) {
       System.out.println(count);
     } else {
