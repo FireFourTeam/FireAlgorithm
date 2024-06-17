@@ -23,8 +23,8 @@
     - 알고리즘 풀이 : java, 희망 직무 : backend
     <br>
 
-- **andy.choi (최환용)** | 팀원 [GitHub Profile](추가)
-    - 블라블라
+- **andy.choi (최환용)** | 팀원 [GitHub Profile](https://github.com/HuttTheJAVA?tab=repositories)
+    - 컴파일러가 나 억까해
     - 알고리즘 풀이 : python, 희망 직무 : backend
     <br>
 
