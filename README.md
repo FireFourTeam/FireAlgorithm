@@ -23,12 +23,12 @@
     - 알고리즘 풀이 : java, 희망 직무 : backend
     <br>
 
-- **andy.choi (최환용)** | 팀원 [GitHub Profile](https://github.com/dannycho1530)
+- **andy.choi (최환용)** | 팀원 [GitHub Profile](추가)
     - 블라블라
     - 알고리즘 풀이 : python, 희망 직무 : backend
     <br>
 
-- **derek.yoo (유문호)** | 팀원 [GitHub Profile](https://github.com/dannycho1530)
+- **derek.yoo (유문호)** | 팀원 [GitHub Profile](https://github.com/umuno)
     - 블라블라
     - 알고리즘 풀이 : java, 희망 직무 : backend
     <br>
