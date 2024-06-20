@@ -35,14 +35,27 @@ public class jamie {
         return;
       } else if (rollcake == 10) {
         count++;
-      } else if (rollcake % 10 == 0) {
-        M -= rollcake / 10 - 1;
-        count += rollcake / 10;
+      } else {
+        int temp;
+        if (rollcake % 10 == 0) {
+          temp = rollcake / 10 - 1;
+        } else {
+          temp = rollcake / 10;
+        }
+
+        if (M >= temp) {
+          M -= temp;
+          count += rollcake / 10;
+        } else {
+          count += M;
+          break;
+        }
       }
 
       if (M == 0) {
         break;
       }
+
     }
 
     System.out.println(count);
