@@ -9,6 +9,7 @@ cakes = 0  # 잘라서 만든 롤케이크 개수
 
 # 롤케이크 자르기
 for length in lengths:
+    flag = True
     while length >= 10:
         if length == 10:
             cakes += 1
@@ -21,6 +22,12 @@ for length in lengths:
                 if length == 10:
                     cakes += 1
                 print(cakes)
-                exit(0)
+                flag = False
+        if flag == False :
+            break
+    if flag == False :
+        break
+        
+    
 
 print(cakes)
