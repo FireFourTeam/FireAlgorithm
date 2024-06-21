@@ -23,7 +23,6 @@ public class jamie {
     Collections.sort(diff);
 
     // 5명 3조 -> 2번 나누기
-    // 8명 4조 -> 4번 나누기
     int cost = 0;
     for (int i = 0; i < N - K; i++) {
       cost += diff.get(i);
