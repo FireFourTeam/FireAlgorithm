@@ -6,7 +6,7 @@ stoku = []
 for i in range(9):
     row = list(str(input()).strip().split())
     stoku.append(row)
-print(stoku)
+# print(stoku)
 
 # 스토쿠 뒤집기
 stoku_ud = [[stoku[row][col] for row in range(9)] for col in range(9)]
