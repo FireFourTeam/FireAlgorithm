@@ -6,7 +6,6 @@ input = sys.stdin.readline
 n = int(input())
 people_list = list(range(n))
 team_list = list(itertools.combinations(people_list, int(n/2)))
-
     
 score_list = [ ]
 total_score = 0
