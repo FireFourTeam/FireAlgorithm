@@ -1,4 +1,4 @@
-import sys,copy
+import sys
 input = sys.stdin.readline
 
 def dfs(i,j):
@@ -8,19 +8,26 @@ def dfs(i,j):
         return
     
     if not zero:
-        ans = copy.deepcopy(matrix)
+        ans = 1
+        for i in range(len(matrix)):
+            word = ''
+            for j in range(len(matrix[i])):
+                word += str(matrix[i][j])
+            print(word)
         return
     
     group = 3*(i//3) + j//3
 
+    next_x,next_y = None,None
+
     for x in range(i,9):
         for y in range(9):
-            if not matrix[x][y]:
+            if not matrix[x][y] and not (x==i and y==j):
                 next_x,next_y = x,y
                 break
         if next_x != None:
             break
-    
+
     for num in range(1,10):
         if not row[i][num] and not col[j][num] and not sub_square[group][num]:
             row[i][num] = 1
@@ -54,6 +61,8 @@ ans = None
 
 zero = 0
 
+init_x,init_y = None,None
+
 for i in range(9):
     for j in range(9):
         if matrix[i][j]:
@@ -63,18 +72,8 @@ for i in range(9):
             sub_square[group][matrix[i][j]] = 1
         else:
             zero += 1
+            if init_x == None:
+                init_x,init_y = i,j
 
-init_x,init_y = None,None
-
-for i in range(9):
-    for j in range(9):
-        if not matrix[i][j]:
-            init_x,init_y = i,j
-            break
-    if init_x != None:
-        break
 
 dfs(init_x,init_y)
-
-for i in range(len(ans)):
-    print(''.join(ans[i]))
