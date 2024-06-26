@@ -28,7 +28,7 @@ public class jamie {
       }
 
       match(0, 0, new ArrayList<Integer>());
-      sb.append(" ");
+      sb.append("\n");
     }
 
     System.out.println(sb.toString());
@@ -36,10 +36,10 @@ public class jamie {
   
   static void match(int start, int count, ArrayList<Integer> selected) {
 
-    if (count == k) {
-      for (int i = 0; i < k; i++) {
-        sb.append(numbers.get(i));
-        if (i < numbers.size() - 1) {
+    if (count == 6) {
+      for (int i = 0; i < 6; i++) {
+        sb.append(selected.get(i));
+        if (i < selected.size() - 1) {
           sb.append(" ");
         }
       }
@@ -47,10 +47,12 @@ public class jamie {
       return;
     }
 
-    for (int i = count; i < k; i++) {
+    for (int i = start; i < k; i++) {
       if (!visited[i]) {
         visited[i] = true;
-        match(i+1, count + 1, selected);
+        selected.add(numbers.get(i));
+        match(i + 1, count + 1, selected);
+        selected.remove(selected.size() - 1);
         visited[i] = false;
       }
     }
