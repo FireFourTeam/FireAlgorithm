@@ -35,7 +35,7 @@ class jamie {
       for (int i = 0; i < M; i++) {
         sb.append(selected.get(i));
 
-        if (i == selected.size() - 1) {
+        if (i != selected.size() - 1) {
           sb.append(" ");
         }
       }
