@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class boj_1260 {
+public class derek {
 
     static StringBuilder sb = new StringBuilder();
     static boolean[] check;
