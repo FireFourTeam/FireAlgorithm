@@ -10,9 +10,9 @@ def dp(n):
 	else:
 		return dp(n-1) + dp(n-2) + dp(n-3)
 
-
-T = int(sys.stdin.readline().strip())
+input = sys.stdin.readline
+T = int(input())
 
 for _ in range(T):
-	n = int(sys.stdin.readline().strip())
+	n = int(input())
 	print(dp(n))
