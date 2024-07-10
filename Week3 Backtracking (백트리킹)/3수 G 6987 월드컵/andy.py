@@ -1,45 +1,45 @@
-###### 틀린 풀이입니다. ########
-
 import sys
+from itertools import combinations
 input = sys.stdin.readline
 
-ans = []
+def dfs(idx):
+    global teams,possible
+    if possible:
+        return
+    if idx == len(lst):
+        hab = 0
+        for team in teams:
+            hab += sum(team)
+        if not hab:
+            possible = True
+        
+        return
+
+    for i in [(0,2),(1,1),(2,0)]:
+        team1 = lst[idx][0]
+        team2 = lst[idx][1]
+
+        if teams[team1][i[0]] and teams[team2][i[1]]:
+            teams[team1][i[0]] -= 1
+            teams[team2][i[1]] -= 1
+            dfs(idx + 1)
+            teams[team1][i[0]] += 1
+            teams[team2][i[1]] += 1
 
 for i in range(4):
-    lst = list(map(int,input().split()))
+    line = list(map(int,input().split()))
+    teams = [[] for i in range(6)]
+    possible = False
+    for i in range(0,len(line),3):
+        win,draw,lose = line[i:i+3]
+        teams[i//3] = [win,draw,lose]
+    
+    lst = list(combinations([0,1,2,3,4,5],2))
 
-    teams = []
+    dfs(0)
 
-    w,d,l = 0,0,0
-
-    for i in range(0,len(lst),3):
-        sub_lst = lst[i:i+3]
-
-        tmp = min(w,sub_lst[2])
-        w -= tmp
-        sub_lst[2] -= tmp
-
-        tmp = min(d,sub_lst[1])
-        d -= tmp
-        sub_lst[1] -= tmp
-
-        tmp = min(l,sub_lst[0])
-        l -= tmp
-        sub_lst[0] -= tmp
-
-        w += sub_lst[0]
-        d += sub_lst[1]
-        l += sub_lst[2]
-
-    tmp = min(w,l)
-    w -= tmp
-    l -= tmp
-
-    if w or d or l:
-        ans.append(0)
+    if possible:
+        print(1,end=" ")
     else:
-        ans.append(1)
-
-print(*ans)
-
-###### 틀린 풀이입니다. ########
+        print(0,end=" ")
+    
