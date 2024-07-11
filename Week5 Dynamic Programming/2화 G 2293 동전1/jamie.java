@@ -12,7 +12,7 @@ public class jamie {
 
     int[] coins = new int[n];
     int[] dp = new int[k + 1];
-    dp[0] = 0;
+    dp[0] = 1;
 
     for (int i = 0; i < n; i++) {
       coins[i] = sc.nextInt();
@@ -27,6 +27,6 @@ public class jamie {
       }
     }
     
-    System.out.println(dp[k]);
+    System.out.println(dp[k+1]);
   }
 }
